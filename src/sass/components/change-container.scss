@@ -1,0 +1,42 @@
+// .change-container {
+//   transition: all 0.2s ease-in;
+//   width: 100%;
+//   height: 100px;
+//   z-index: 2;
+//   background: $primary-color;
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+.checkbox-form:checked {
+  & + .change-form::after {
+    border-color: $primary-text-color;
+    color: $primary-text-color;
+    content: 'Login'
+  }
+  & ~ .log-in {
+    display: none;
+  }
+  & ~ .register {
+    display: flex;
+  }
+}
+
+.change-form::after {
+  display: block;
+  content: 'Register';
+  outline: none;
+  background: #fff;
+  border: 2px solid $secondary-color;
+  color: $secondary-color;
+  font-family: $text-font-f;
+  font-size: 16px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  margin: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+//}

@@ -1,0 +1,52 @@
+.form-container {
+  position: relative;
+  padding: $form-container-padding;
+  z-index: 1;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  height: $form-container-height;
+  align-items: center;
+  justify-content: center;
+
+  &.log-in,
+  &.register {
+    padding: $login-form-padding;
+  }
+
+  &.register {
+    display: none;
+  }
+
+  .log-in,
+  .register {
+    &__form {
+      height: 170px;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__input {
+      background-color: $primary-bg-color;
+      border: none;
+      padding: $input-padding;
+      font-size: $base-fz;
+      font-family: $text-font-f;
+    }
+
+    &__button {
+      width: 60%;
+      margin: 0 auto;
+      background-color: $secondary-color;
+      font-family: $text-font-f;
+      color: $primary-color;
+      border: none;
+      border-radius: 50px;
+      padding: 12px 45px;
+      cursor: pointer;
+      margin-top: 14px;
+    }
+  }
+}

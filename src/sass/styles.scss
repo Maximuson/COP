@@ -1,0 +1,14 @@
+/*
+   Import partials below
+*/
+@import './variables';
+@import './normalize';
+@import './base';
+
+// components
+
+@import './components/welcome-container';
+@import './components/change-container';
+@import './components/form-container';
+@import './components/container-center.scss';
+
