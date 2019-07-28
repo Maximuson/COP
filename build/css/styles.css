@@ -403,6 +403,12 @@ ul {
   padding: 0;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -511,4 +517,83 @@ ul {
   height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+.dialogs__textarea {
+  width: 100%;
+  resize: none;
+  text-overflow: clip;
+  border: none;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+}
+
+.dialogs__messages {
+  display: flex;
+  /* width: 100%; */
+  flex-grow: 1;
+}
+
+.dialogs__input {
+  width: 100%;
+  display: flex;
+  height: 80px;
+  align-self: flex-end;
+}
+
+.dialogs__page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.dialogs__list {
+  width: 300px;
+  border-right: 1px solid #ddd;
+}
+
+.dialogs__list-item {
+  height: 80px;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dialogs__list-item:hover {
+  background-color: #d4d4d4;
+}
+
+.dialogs__list-item:hover .dialogs__avatar {
+  transition: all .2s ease-in;
+  margin-right: 20px;
+}
+
+.dialogs__name {
+  margin: 0;
+  font-family: Montserrat;
+  font-size: 13px;
+}
+
+.dialogs__last-visit {
+  margin: 0;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-family: Roboto;
+  font-size: 12px;
+  color: #aaa;
+  word-spacing: 1px;
+  letter-spacing: -1px;
+}
+
+.dialogs__avatar {
+  width: 60px;
+  margin-right: 10px;
+  -webkit-clip-path: circle();
+  clip-path: circle();
+  transition: all .2s ease-in;
 }

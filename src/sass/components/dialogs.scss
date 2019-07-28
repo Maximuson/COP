@@ -1,0 +1,86 @@
+.dialogs {
+
+  &__textarea {
+    width: 100%;
+    resize: none;
+    text-overflow: clip;
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  &__messages {
+    display: flex;
+    /* width: 100%; */
+    flex-grow: 1;
+  }
+
+  &__input {
+    width: 100%;
+    display: flex;
+    height: 80px;
+    align-self: flex-end;
+  }
+  &__page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+
+  &__list {
+    width: 300px;
+    border-right: 1px solid #ddd;
+  }
+
+  &__list-item {
+    height: 80px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #d4d4d4;
+      
+
+      .dialogs__avatar {
+        transition: all .2s ease-in;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__name {
+    margin: 0;
+    font-family: Montserrat;
+    font-size: 13px;
+  }
+
+  &__last-visit {
+    margin: 0;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-family: Roboto;
+    font-size: 12px;
+    color: #aaa;
+    word-spacing: 1px;
+    letter-spacing: -1px;
+  }
+
+  &__avatar {
+    width: 60px;
+    margin-right: 10px;
+    clip-path: circle();
+    transition: all .2s ease-in;
+
+    
+
+    
+  
+
+  }
+}
