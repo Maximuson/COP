@@ -19,6 +19,33 @@
   100% {
     width: 100%;
     opacity: 100;
-    
+
+  }
+}
+
+@media (min-width:768px) {
+  @keyframes hideInLeft {
+    0% {
+      width: 300px;
+    }
+    99% {
+      width: 0;
+    }
+    100% {
+      opacity: 0;
+      overflow: hidden;
+      width: 0;
+    }
+  }
+  @keyframes showFromLeft {
+    0%{
+      width: 0;
+      
+    }
+    100% {
+      width: 300px;
+      opacity: 100;
+  
+    }
   }
 }
