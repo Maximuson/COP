@@ -529,9 +529,41 @@ img {
 }
 
 .dialogs__messages {
+  max-height: calc(100vh - 80px);
   display: flex;
-  /* width: 100%; */
+  flex-wrap: wrap;
   flex-grow: 1;
+  height: 100%;
+}
+
+.dialogs__messages-nav {
+  height: 80px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.dialogs__nav-back {
+  position: relative;
+  border: 2px solid #fff;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  -webkit-clip-path: circle(49% at 0% 50%);
+  clip-path: circle(49% at 0% 50%);
+  font-family: Roboto;
+  color: #fff;
+  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.dialogs__nav-back.right-arrow::before {
+  left: 12%;
+}
+
+.dialogs__nav-back.left-arrow::before {
+  left: 28%;
 }
 
 .dialogs__input {
@@ -543,14 +575,33 @@ img {
 
 .dialogs__page {
   position: relative;
+  flex-wrap: wrap;
+  align-content: flex-start;
   width: 100%;
   height: 100vh;
   display: flex;
 }
 
 .dialogs__list {
+  max-height: calc(100vh - 80px);
+  overflow: overlay;
   width: 300px;
   border-right: 1px solid #ddd;
+  transition: all 0.2s ease-in;
+}
+
+.dialogs__list.hide {
+  -webkit-animation: hideInLeft 0.2s ease-in;
+  animation: hideInLeft 0.2s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.dialogs__list.show {
+  -webkit-animation: showFromLeft 0.2s ease-in;
+  animation: showFromLeft 0.2s ease-in;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .dialogs__dialog-menu {
@@ -584,6 +635,7 @@ img {
   height: 80px;
   position: relative;
   border-bottom: 1px solid #ddd;
+  background-color: #fff;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -643,4 +695,90 @@ img {
   -webkit-clip-path: circle();
   clip-path: circle();
   transition: all 0.2s ease-in;
+}
+
+.right-arrow::before,
+.left-arrow::before {
+  content: '';
+  --s: 20px;
+  --bd: 4px solid #ddd;
+  width: var(--s);
+  height: var(--s);
+  border-left: var(--bd);
+  border-top: var(--bd);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.right-arrow::before {
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.left-arrow::before {
+  left: 28%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@-webkit-keyframes hideInLeft {
+  0% {
+    width: 100%;
+  }
+
+  99% {
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    overflow: hidden;
+    width: 0;
+  }
+}
+
+@keyframes hideInLeft {
+  0% {
+    width: 100%;
+  }
+
+  99% {
+    width: 0;
+  }
+
+  100% {
+    opacity: 0;
+    overflow: hidden;
+    width: 0;
+  }
+}
+
+@-webkit-keyframes showFromLeft {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 100;
+  }
+}
+
+@keyframes showFromLeft {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+    opacity: 100;
+  }
+}
+
+@media (max-width: 767px) {
+  .dialogs__list {
+    position: absolute;
+    top: 80px;
+    width: 100%;
+  }
 }

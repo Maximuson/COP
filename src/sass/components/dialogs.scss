@@ -9,9 +9,42 @@
   }
 
   &__messages {
+    max-height: calc(100vh - 80px);
     display: flex;
-    /* width: 100%; */
+    flex-wrap: wrap;
     flex-grow: 1;
+    height: 100%;
+
+    @media (max-width: 767px) {
+    }
+  }
+
+  &__messages-nav {
+    height: 80px;
+    width: 100%;
+    background-color: #ddd;
+  }
+
+  &__nav-back {
+    position: relative;
+    border: 2px solid #fff;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    clip-path: circle(49% at 0% 50%);
+    font-family: Roboto;
+    color: #fff;
+    background-color: #fff;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+
+    &.right-arrow::before {
+      left: 12%;
+    }
+    &.left-arrow::before {
+      left: 28%;
+    }
   }
 
   &__input {
@@ -22,14 +55,34 @@
   }
   &__page {
     position: relative;
+    flex-wrap: wrap;
+    align-content: flex-start;
     width: 100%;
     height: 100vh;
     display: flex;
   }
 
   &__list {
+    max-height: calc(100vh - 80px);
+    overflow: overlay;
     width: 300px;
     border-right: 1px solid #ddd;
+    transition: all 0.2s ease-in;
+
+    @media (max-width: 767px) {
+      position: absolute;
+      top: 80px;
+      width: 100%;
+    }
+
+    &.hide {
+      animation: hideInLeft 0.2s ease-in;
+      animation-fill-mode: forwards;
+    }
+    &.show {
+      animation: showFromLeft 0.2s ease-in;
+      animation-fill-mode: forwards;
+    }
   }
 
   &__dialog-menu {
@@ -63,6 +116,7 @@
     height: 80px;
     position: relative;
     border-bottom: 1px solid #ddd;
+    background-color: #fff;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -83,7 +137,6 @@
 
           .dialogs__hide-dialog {
             display: block;
-            
           }
         }
       }

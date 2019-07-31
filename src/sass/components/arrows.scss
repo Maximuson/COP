@@ -1,0 +1,21 @@
+.right-arrow::before,
+.left-arrow::before {
+  content: '';
+  --s: 20px;
+  --bd: 4px solid #ddd;
+  width: var(--s);
+  height: var(--s);
+  border-left: var(--bd);
+  border-top: var(--bd);
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.right-arrow::before {
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.left-arrow::before {
+  left: 28%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
