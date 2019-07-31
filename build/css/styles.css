@@ -526,6 +526,7 @@ img {
   border: none;
   border-top: 1px solid #ddd;
   padding: 10px;
+  font-family: Roboto, sans-serif;
 }
 
 .dialogs__messages {
@@ -534,6 +535,7 @@ img {
   flex-wrap: wrap;
   flex-grow: 1;
   height: 100%;
+  width: calc(100% - 300px);
 }
 
 .dialogs__messages-nav {
@@ -543,6 +545,7 @@ img {
 }
 
 .dialogs__nav-back {
+  display: none;
   position: relative;
   border: 2px solid #fff;
   width: 80px;
