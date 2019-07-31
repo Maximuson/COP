@@ -553,6 +553,33 @@ img {
   border-right: 1px solid #ddd;
 }
 
+.dialogs__dialog-menu {
+  height: 100%;
+  width: 0;
+  position: absolute;
+  left: 0;
+  background-color: cornflowerblue;
+  transition: 0.2s ease-in;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dialogs__hide-dialog {
+  background: transparent;
+  border: 2px solid #fff;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  text-align: center;
+  font-family: Roboto;
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .dialogs__list-item {
   height: 80px;
   position: relative;
@@ -563,12 +590,32 @@ img {
   cursor: pointer;
 }
 
-.dialogs__list-item:hover {
+.dialogs__list-item:hover,
+.dialogs__list-item:focus {
   background-color: #d4d4d4;
 }
 
-.dialogs__list-item:hover .dialogs__avatar {
-  transition: all .2s ease-in;
+.dialogs__list-item:hover .dialogs__dialog-menu,
+.dialogs__list-item:focus .dialogs__dialog-menu {
+  width: 5px;
+}
+
+.dialogs__list-item:hover .dialogs__dialog-menu:hover,
+.dialogs__list-item:focus .dialogs__dialog-menu:hover {
+  cursor: auto;
+  width: 100%;
+  transition: 0.2s ease-in;
+  z-index: 1;
+}
+
+.dialogs__list-item:hover .dialogs__dialog-menu:hover .dialogs__hide-dialog,
+.dialogs__list-item:focus .dialogs__dialog-menu:hover .dialogs__hide-dialog {
+  display: block;
+}
+
+.dialogs__list-item:hover .dialogs__avatar,
+.dialogs__list-item:focus .dialogs__avatar {
+  transition: all 0.2s ease-in;
   margin-right: 20px;
 }
 
@@ -595,5 +642,5 @@ img {
   margin-right: 10px;
   -webkit-clip-path: circle();
   clip-path: circle();
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }

@@ -1,5 +1,4 @@
 .dialogs {
-
   &__textarea {
     width: 100%;
     resize: none;
@@ -33,6 +32,33 @@
     border-right: 1px solid #ddd;
   }
 
+  &__dialog-menu {
+    height: 100%;
+    width: 0;
+    position: absolute;
+    left: 0;
+    background-color: cornflowerblue;
+    transition: 0.2s ease-in;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__hide-dialog {
+    background: transparent;
+    border: 2px solid #fff;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-family: Roboto;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
   &__list-item {
     height: 80px;
     position: relative;
@@ -42,12 +68,28 @@
     padding: 10px;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: #d4d4d4;
-      
+
+      .dialogs__dialog-menu {
+        width: 5px;
+
+        &:hover {
+          cursor: auto;
+          width: 100%;
+          transition: 0.2s ease-in;
+          z-index: 1;
+
+          .dialogs__hide-dialog {
+            display: block;
+            
+          }
+        }
+      }
 
       .dialogs__avatar {
-        transition: all .2s ease-in;
+        transition: all 0.2s ease-in;
         margin-right: 20px;
       }
     }
@@ -75,12 +117,6 @@
     width: 60px;
     margin-right: 10px;
     clip-path: circle();
-    transition: all .2s ease-in;
-
-    
-
-    
-  
-
+    transition: all 0.2s ease-in;
   }
 }

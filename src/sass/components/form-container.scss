@@ -12,10 +12,13 @@
   &.log-in,
   &.register {
     padding: $login-form-padding;
+
   }
 
   &.register {
     display: none;
+
+   
   }
 
   .log-in,

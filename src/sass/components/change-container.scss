@@ -12,11 +12,13 @@
   & + .change-form::after {
     border-color: $primary-text-color;
     color: $primary-text-color;
-    content: 'Login'
+    content: 'Login';
   }
+
   & ~ .log-in {
     display: none;
   }
+  
   & ~ .register {
     display: flex;
   }
